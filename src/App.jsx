@@ -38,7 +38,7 @@ const App = () => {
       setBaseUrl(storedBaseUrl);
       setIsLoggedIn(true);
     } else {
-      setIsLoggedIn(false);
+      setIsLoggedIn(true);
     }
 
     const storedPasswordStatus = localStorage.getItem("passwordCorrect");

@@ -8,7 +8,7 @@ export default function WhatsAppButton({
   customerPhone,
   customerName,
   customerAddress,
-  includeGST = true,
+  includeGST = false,
 }) {
   // Helper to calculate total price of items
   const calculateTotalPrice = (items = []) =>
@@ -48,7 +48,7 @@ export default function WhatsAppButton({
 
     // Construct message
     let message = encodeURIComponent(
-      `*🍔🍟🍕 Pizza Italia 🍕🍟🍔*\n\n` +
+      `*🍔🍟🍕 Apna Pizza 🍕🍟🍔*\n\n` +
         `Order: *${orderId}*` +
         (customerName ? `\nName: *${customerName}*` : "") +
         (customerPhone ? `\nPhone: *${customerPhone}*` : "") +

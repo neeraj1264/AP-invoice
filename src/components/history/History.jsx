@@ -147,7 +147,7 @@ const History = () => {
 
   const handleWhatsappClick = (order) => {
     const customerPhoneNumber = order.phone; // Correct field to access phone number
-    const message = `We hope you had a delightful order experience with us. Your feedback is incredibly valuable as we continue to enhance our services. How did you enjoy your meal? We’d love to hear your thoughts.\nTeam: Italia Pizza`;
+    const message = `We hope you had a delightful order experience with us. Your feedback is incredibly valuable as we continue to enhance our services. How did you enjoy your meal? We’d love to hear your thoughts.\nTeam: Apna Pizza`;
     // Create the WhatsApp URL to send the message
     const whatsappUrl = `https://wa.me/+91${customerPhoneNumber}?text=${encodeURIComponent(
       message
@@ -365,7 +365,7 @@ const History = () => {
                               />
                             )}
                           /> */}
-                          <Rawbt3Inch
+                          <RawBTPrintButton
                             productsToSend={order.products}
                             customerPhone={order.phone}
                             customerName={order.name}

@@ -105,9 +105,9 @@ export default function RawBTPrintButton({
     });
 
     const invoiceText = `
-  \x1B\x21\x30 Foodies Hub \x1B\x21\x00
-  \x1B\x61\x01  Pehowa, Haryana, 136128\x1B\x61\x00
-  \x1B\x61\x01  Phone: +91 70158-23645\x1B\x61\x00
+  \x1B\x21\x30 APNA PIZZA \x1B\x21\x00
+  \x1B\x61\x01  Karah Sahib Adda\x1B\x61\x00
+  \x1B\x61\x01  +91 97298-12356\x1B\x61\x00
 
   \x1B\x21\x10-----Invoice Details-----\x1B\x21\x00
   

@@ -24,7 +24,7 @@ const CustomerDetail = () => {
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
   const [customerAddress, setCustomerAddress] = useState("");
-  const [includeGST, setIncludeGST] = useState(true);
+  const [includeGST, setIncludeGST] = useState(false);
 
   const [deliveryCharge, setDeliveryCharge] = useState();
   const [discount, setDiscount] = useState(); // New discount state
@@ -367,15 +367,15 @@ const CustomerDetail = () => {
         ref={invoiceRef}
         style={{ display: "none" }}
       >
-        {/* <img src="/logo.png" alt="Logo" width={100} className="logo" /> */}
-        <h1 style={{ textAlign: "center", margin: 0, fontSize: "55px" }}>
+        <img src="/logo1.png" alt="Logo" width={300} className="logo" />
+        {/* <h1 style={{ textAlign: "center", margin: 0, fontSize: "55px" }}>
           Apna Pizza
-        </h1>
+        </h1> */}
         <p style={{ textAlign: "center", margin: 0, fontSize: "15px" }}>
           Karah Sahib Adda
         </p>
         <p style={{ textAlign: "center", margin: 0, fontSize: "15px" }}>
-          99969-99799
+          97298-12356
         </p>
         <hr />
         <h2 style={{ textAlign: "center", margin: 0, fontSize: "20px" }}>
@@ -669,7 +669,7 @@ const CustomerDetail = () => {
             <h2>Select Action</h2>
 
              {/* GST toggle */}
-          <label style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+          {/* <label style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
             <input
               type="checkbox"
               checked={includeGST}
@@ -677,7 +677,7 @@ const CustomerDetail = () => {
               style={{ width: '20%' }}
             />
             Include 5% GST
-          </label>
+          </label> */}
 
             <WhatsAppButton
               productsToSend={productsToSend}
@@ -693,7 +693,7 @@ const CustomerDetail = () => {
             <button onClick={handlePngDownload} className="popupButton">
               Download Invoice
             </button>
-            <Rawbt3Inch
+            <RawBTPrintButton
               productsToSend={productsToSend}
               parsedDiscount={parsedDiscount}
               deliveryChargeAmount={parseFloat(deliveryCharge) || 0}
