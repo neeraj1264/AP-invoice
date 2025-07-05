@@ -2,19 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TbCameraPlus } from "react-icons/tb";
 import { FaTimes, FaArrowRight, FaCheckCircle } from "react-icons/fa";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import "./NewProduct.css";
 import { fetchCategories, addCategory, addProduct } from "../../api";
 import Header from "../header/Header";
-
-const toastOptions = {
-  position: "bottom-right",
-  autoClose: 2000,
-  pauseOnHover: true,
-  draggable: true,
-  theme: "dark",
-};
 
 const NewProduct = ({ setSelectedProducts }) => {
   const navigate = useNavigate();
@@ -114,7 +105,7 @@ const NewProduct = ({ setSelectedProducts }) => {
 
   const handleAddVariety = () => {
     if (!productVariety.size || !productVariety.price) {
-      toast.error("Please fill in size and price!", toastOptions);
+      toast.error("Please fill in size and price!");
       return;
     }
   
@@ -142,7 +133,7 @@ const NewProduct = ({ setSelectedProducts }) => {
   const handleAddProduct = async () => {
     // Check for name field (always required)
     if (!product.name) {
-      toast.error("Please fill in the product name!", toastOptions);
+      toast.error("Please fill in the product name!");
       return;
     }
   
@@ -152,7 +143,7 @@ const NewProduct = ({ setSelectedProducts }) => {
     // When "Add Varieties" is checked
     if (isWithVariety) {
       if (product.varieties.length === 0) {
-        toast.error("Please add at least one variety!", toastOptions);
+        toast.error("Please add at least one variety!");
         return;
       }
       const updatedVarieties = product.varieties.map(variety => ({
@@ -167,7 +158,7 @@ const NewProduct = ({ setSelectedProducts }) => {
     } else {
       // When "Add Varieties" is NOT checked, validate the price field
       if (!product.price) {
-        toast.error("Please fill in the product price!", toastOptions);
+        toast.error("Please fill in the product price!");
         return;
       }
       setProduct(prev => ({
@@ -185,7 +176,7 @@ const NewProduct = ({ setSelectedProducts }) => {
     );
   
     if (isProductExist) {
-      toast.error("This product already exists!", toastOptions);
+      toast.error("This product already exists!");
       return;
     }
   
@@ -217,7 +208,7 @@ const NewProduct = ({ setSelectedProducts }) => {
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 1000);
     } catch (error) {
-      toast.error("Error saving product!", toastOptions);
+      toast.error("Error saving product!");
       console.error(error);
     }
   };
@@ -228,7 +219,6 @@ const NewProduct = ({ setSelectedProducts }) => {
 
   return (
     <div>
-      <ToastContainer />
       <Header
         headerName="Foodies Hub"
       />

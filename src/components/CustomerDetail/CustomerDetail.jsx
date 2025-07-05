@@ -7,19 +7,11 @@ import "./Customer.css";
 // import { handleScreenshotAsPDF } from "../Utils/DownloadPdf";
 import Header from "../header/Header";
 import { fetchcustomerdata, sendorder, setdata } from "../../api";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import WhatsAppButton from "../Utils/WhatsappOrder";
 import RawBTPrintButton from "../Utils/RawBTPrintButton";
 import Rawbt3Inch from "../Utils/Rawbt3Inch";
 
-const toastOptions = {
-  position: "bottom-right",
-  autoClose: 2000,
-  pauseOnHover: true,
-  draggable: true,
-  theme: "dark",
-};
 const CustomerDetail = () => {
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
@@ -135,7 +127,7 @@ const CustomerDetail = () => {
   const handleSendClick = async () => {
     const productsToSend = JSON.parse(localStorage.getItem("productsToSend"));
     if (!productsToSend || productsToSend.length === 0) {
-      toast.error("Please add product before proceed", toastOptions);
+      toast.error("Please add product before proceed");
       return; // Exit the function early
     }
 
@@ -254,7 +246,6 @@ const CustomerDetail = () => {
 
   return (
     <div>
-      <ToastContainer />
       <Header />
       <div className="cust-inputs" style={{ marginTop: "4rem" }}>
         <input

@@ -3,10 +3,10 @@ import React, { useRef } from "react";
 import { toast } from "react-toastify";
 import { handleScreenshot } from "./DownloadPng";
 
-export default function DownloadInvoiceButton({ invoiceRef, toastOptions }) {
+export default function DownloadInvoiceButton({ invoiceRef }) {
   const onClick = () => {
     if (!invoiceRef.current) {
-      return toast.error("Invoice not ready", toastOptions);
+      return toast.error("Invoice not ready");
     }
     invoiceRef.current.style.display = "block";
     setTimeout(() => {

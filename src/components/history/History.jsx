@@ -61,7 +61,6 @@ const History = () => {
       console.log("Order removed successfully from both MongoDB and state");
     } catch (error) {
       console.error("Error removing order:", error.message);
-      // you could also show a toast / modal here
     }
   };
 

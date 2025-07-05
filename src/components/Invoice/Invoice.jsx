@@ -14,17 +14,7 @@ import {
 import { IoMdCloseCircle } from "react-icons/io";
 import Header from "../header/Header";
 import { fetchProducts, removeProduct } from "../../api";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-const toastOptions = {
-  position: "bottom-right",
-  autoClose: 2000,
-  pauseOnHover: true,
-  draggable: true,
-  theme: "dark",
-  width: "90%",
-};
 const Invoice = () => {
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [productsToSend, setProductsToSend] = useState([]);
@@ -350,7 +340,6 @@ const Invoice = () => {
 
   return (
     <div>
-      <ToastContainer />
       <Header
         headerName="Foodies Hub"
         setSearch={setSearch}
